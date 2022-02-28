@@ -5,6 +5,8 @@ console.log(c)
 canvas.width = innerWidth
 canvas.height = innerHeight
 
+const gravity = 0.5
+
 class Player {
     constructor() {
         this.position = {
@@ -26,6 +28,7 @@ class Player {
     update() {
         this.position.y += this.velocity.y
         this.draw()
+        this.velocity.y += gravity
     }
 }
 
