@@ -71,12 +71,18 @@ function animate() {
     player.update()
     platform.draw()
 
-    if (keys.right.pressed) {
+    if (keys.right.pressed && player.position.x < 450) {
         player.velocity.x = 5
-    } else if (keys.left.pressed) {
+    } else if (keys.left.pressed && player.position.x > 100) {
         player.velocity.x = -5
     } else {
         player.velocity.x = 0
+
+        if (keys.right.pressed) {
+            platform.position.x -= 5
+        } else if (keys.left.pressed) {
+            platform.position.x -= -5
+        }
     }
 
     // 
@@ -99,7 +105,7 @@ window.addEventListener('keydown', ({ code }) => {
             break
         case 'KeyW':
             console.log('up')
-            player.velocity.y -= 20
+            player.velocity.y -= 10
             break
         case 'KeyS':
             console.log('down')
@@ -122,7 +128,7 @@ window.addEventListener('keyup', ({ code }) => {
             break
         case 'KeyW':
             console.log('up')
-            player.velocity.y -= 20
+            player.velocity.y -= 10
             break
         case 'KeyS':
             console.log('down')
