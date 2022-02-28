@@ -124,7 +124,9 @@ window.addEventListener('keydown', ({ code }) => {
             break
         case 'KeyW':
             console.log('up')
-            player.velocity.y -= 10
+            if (player.velocity.y == 0) {
+                player.velocity.y -= 20
+            }
             break
         case 'KeyS':
             console.log('down')
@@ -145,10 +147,11 @@ window.addEventListener('keyup', ({ code }) => {
             keys.right.pressed = false
             console.log('right')
             break
-        case 'KeyW':
+        /*case 'KeyW':
             console.log('up')
             player.velocity.y -= 10
             break
+        */
         case 'KeyS':
             console.log('down')
             break
