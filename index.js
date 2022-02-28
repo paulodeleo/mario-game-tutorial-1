@@ -19,7 +19,7 @@ class Player {
         this.height = 30
     }
     draw() {
-        c.fillStyle = 'red'
+        c.fillStyle = 'green'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 
